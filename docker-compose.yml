@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  vaultbreaker:
+    build: .
+    container_name: vaultbreaker
+    ports:
+      - "8080:80"
+    restart: unless-stopped

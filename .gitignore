@@ -1,0 +1,19 @@
+# OVA / VM build artifacts
+ova-build/build/
+ova-build/vaultbreaker.ova
+ova-build/vaultbreaker-disk001.vmdk
+ova-build/vaultbreaker.mf
+*.ova
+*.vmdk
+*.raw
+*.qcow2
+
+# Docker
+docker-compose.override.yml
+
+# misc
+.DS_Store
+*.log
+__pycache__/
+*.swp
+.vagrant/

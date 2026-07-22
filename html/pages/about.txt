@@ -1,0 +1,10 @@
+About FileVault
+==============
+
+FileVault provides secure, access-controlled storage for internal documents.
+
+The platform is split into two surfaces:
+  * Public knowledge base -- rendered via the document viewer.
+  * Administrative console -- restricted to authenticated staff at /login.php.
+
+For support, contact the IT desk. Please report any unexpected file exposure.

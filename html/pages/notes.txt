@@ -1,0 +1,9 @@
+Internal Notes (DRAFT)
+=====================
+
+- The document viewer accepts a ?file= parameter. Remind devs that path
+  traversal should be blocked. We added a '..' check -- should be fine, right?
+- Admin login is at /login.php. Passwords are stored hashed in the app database.
+- The application config (config.php) holds the database path and app secrets.
+- Staff uploads land in /uploads/ and are served back to the browser.
+- Maintenance scripts may run with elevated privileges. Review sudo policy.

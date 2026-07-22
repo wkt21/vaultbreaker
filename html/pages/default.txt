@@ -1,0 +1,11 @@
+Welcome to FileVault Secure Documents
+======================================
+
+FileVault is the internal document platform for staff. Pages are rendered
+through the document viewer at view.php?file=<name>.
+
+If you have been issued staff credentials, you may sign in at /login.php to
+access the administrative console, including the secure file upload facility.
+
+NOTE TO ADMINS: backups run nightly. The application database and configuration
+are stored locally on this host. Do not leave credentials in shared documents.

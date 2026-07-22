@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Envelope ovf:version="1.0" xml:lang="en"
+ xmlns="http://schemas.dmtf.org/ovf/envelope/1"
+ xmlns:ovf="http://schemas.dmtf.org/ovf/envelope/1"
+ xmlns:rasd="http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_ResourceAllocationSettingData"
+ xmlns:vssd="http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_VirtualSystemSettingData"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:vbox="http://www.virtualbox.org/ovf/machine">
+  <References>
+    <File ovf:id="file1" ovf:href="vaultbreaker-disk001.vmdk" ovf:size="0"/>
+  </References>
+  <DiskSection>
+    <Info>Virtual disk information</Info>
+    <Disk ovf:capacity="3221225472" ovf:capacityAllocationUnits="byte"
+          ovf:diskId="vmdisk1" ovf:fileRef="file1"
+          ovf:format="http://www.vmware.com/interfaces/specifications/vmdk.html#streamOptimized"/>
+  </DiskSection>
+  <NetworkSection>
+    <Info>Logical networks</Info>
+    <Network ovf:name="NAT"/>
+  </NetworkSection>
+  <VirtualSystem ovf:id="vaultbreaker">
+    <Info>VaultBreaker - HTB-style challenge box (Debian 12)</Info>
+    <Name>vaultbreaker</Name>
+    <OperatingSystemSection ovf:id="106" ovf:version="12" vbox:ostype="Debian_64">
+      <Info>Debian 12 (Bookworm), 64-bit</Info>
+    </OperatingSystemSection>
+    <VirtualHardwareSection>
+      <Info>Virtual hardware</Info>
+      <System>
+        <vssd:ElementName>Virtual Hardware Family</vssd:ElementName>
+        <vssd:InstanceID>0</vssd:InstanceID>
+        <vssd:VirtualSystemIdentifier>vaultbreaker</vssd:VirtualSystemIdentifier>
+        <vssd:VirtualSystemType>virtualbox-2.2</vssd:VirtualSystemType>
+      </System>
+      <Item>
+        <rasd:Caption>1 virtual CPU</rasd:Caption>
+        <rasd:Description>Number of virtual CPUs</rasd:Description>
+        <rasd:ElementName>1 virtual CPU</rasd:ElementName>
+        <rasd:InstanceID>1</rasd:InstanceID>
+        <rasd:ResourceType>3</rasd:ResourceType>
+        <rasd:VirtualQuantity>1</rasd:VirtualQuantity>
+      </Item>
+      <Item>
+        <rasd:Caption>1024 MB of memory</rasd:Caption>
+        <rasd:Description>Memory Size</rasd:Description>
+        <rasd:ElementName>1024 MB of memory</rasd:ElementName>
+        <rasd:InstanceID>2</rasd:InstanceID>
+        <rasd:ResourceType>4</rasd:ResourceType>
+        <rasd:VirtualQuantity>1024</rasd:VirtualQuantity>
+      </Item>
+      <Item>
+        <rasd:Caption>IDE Controller</rasd:Caption>
+        <rasd:ElementName>IDE Controller</rasd:ElementName>
+        <rasd:InstanceID>3</rasd:InstanceID>
+        <rasd:ResourceSubType>PIIX4</rasd:ResourceSubType>
+        <rasd:ResourceType>5</rasd:ResourceType>
+      </Item>
+      <Item>
+        <rasd:Caption>Hard Disk</rasd:Caption>
+        <rasd:ElementName>Hard Disk</rasd:ElementName>
+        <rasd:InstanceID>4</rasd:InstanceID>
+        <rasd:HostResource>ovf:/disk/vmdisk1</rasd:HostResource>
+        <rasd:Parent>3</rasd:Parent>
+        <rasd:ResourceType>17</rasd:ResourceType>
+      </Item>
+      <Item>
+        <rasd:Caption>Ethernet adapter</rasd:Caption>
+        <rasd:ElementName>Ethernet adapter</rasd:ElementName>
+        <rasd:InstanceID>5</rasd:InstanceID>
+        <rasd:ResourceType>10</rasd:ResourceType>
+        <rasd:ResourceSubType>E1000</rasd:ResourceSubType>
+        <rasd:AutomaticAllocation>true</rasd:AutomaticAllocation>
+        <rasd:Connection>NAT</rasd:Connection>
+      </Item>
+    </VirtualHardwareSection>
+  </VirtualSystem>
+</Envelope>
