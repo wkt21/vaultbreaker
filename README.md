@@ -1,5 +1,8 @@
 # VaultBreaker — HTB-style Challenge Box
 
+<img width="1056" height="620" alt="IMG_3015" src="https://github.com/user-attachments/assets/809ea8fa-26f2-4a33-9d59-bca47d3f5703" />
+
+
 An intentionally vulnerable **Hack-The-Box-style** challenge with a three-flag
 escalation chain. Ships in two interchangeable formats:
 
